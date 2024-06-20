@@ -1,0 +1,50 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Environment files
+.env
+venv/
+env/
+.venv/
+.DS_Store
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# MySQL dumps
+*.sql
+
+# Unit test / coverage reports
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# macOS files
+.DS_Store
+
+# Ignore key.key file
+password_manager/key.key
+
+# Ignore key.key file in the soc directory
+soc/key.key.env

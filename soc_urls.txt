@@ -1,0 +1,61 @@
+soc App URLs:
+Alerts List
+
+URL: /soc/alerts/
+Description: Displays a list of all alerts.
+Template: alert_list.html
+Create Alert
+
+URL: /soc/alerts/create/
+Description: Form to create a new alert.
+Template: create_alert.html
+Incidents List
+
+URL: /soc/incidents/
+Description: Displays a list of all incidents.
+Template: incident_list.html
+Create Incident
+
+URL: /soc/incidents/create/
+Description: Form to create a new incident.
+Template: create_incident.html
+Live Attack Map
+
+URL: /soc/attack-map/
+Description: Displays a live simulated attack map.
+Template: attack_map.html
+integrations App URLs:
+API Data Placeholder
+
+? URL: /integrations/api-data/ 
+Description: Placeholder for displaying API data in JSON format.
+Template: (Returns JSON directly)
+Shodan API Data
+
+? URL: /integrations/shodan/
+Description: Fetches and displays data from the Shodan API in JSON format.
+Template: (Returns JSON directly)
+AbuseIPDB API Data
+
+?URL: /integrations/abuseipdb/
+Description: Fetches and displays data from the AbuseIPDB API in JSON format.
+Template: (Returns JSON directly)
+How to Access Each URL:
+To access any of these URLs, you can navigate directly in your browser to the corresponding path. Assuming your server is running on http://127.0.0.1:8000/, you can append the URL paths to this base URL.
+
+For example:
+
+To view the alerts list, go to http://127.0.0.1:8000/soc/alerts/.
+To view the Shodan API data, go to http://127.0.0.1:8000/integrations/shodan/.
+Additional Navigation Links in the App:
+In the base_generic.html template, we have navigation links that make it easier to access these URLs directly from any page in your app:
+
+Usage in Browser:
+View Alerts: Visit http://127.0.0.1:8000/soc/alerts/ to see the list of alerts.
+Create a New Alert: Visit http://127.0.0.1:8000/soc/alerts/create/ to create a new alert.
+View Incidents: Visit http://127.0.0.1:8000/soc/incidents/ to see the list of incidents.
+Create a New Incident: Visit http://127.0.0.1:8000/soc/incidents/create/ to create a new incident.
+Live Attack Map: Visit http://127.0.0.1:8000/soc/attack-map/ to see the live attack map.
+API Data Placeholder: Visit http://127.0.0.1:8000/integrations/api-data/ for the API data placeholder response.
+Shodan API Data: Visit http://127.0.0.1:8000/integrations/shodan/ to see the data fetched from the Shodan API.
+AbuseIPDB API Data: Visit http://127.0.0.1:8000/integrations/abuseipdb/ to see the data fetched from the AbuseIPDB API.

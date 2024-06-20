@@ -1,0 +1,41 @@
+{% extends "soc/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Alert List</h1>
+<table class="alerts-table">
+    <thead>
+        <tr>
+            <th>Priority</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alert in alerts %}
+        <tr class="alert-row" onclick="toggleDetails(this)">
+            <td class="priority-cell">
+                <select class="priority-dropdown">
+                    <option value="High" {% if alert.severity == "High" %}selected{% endif %}>High</option>
+                    <option value="Medium" {% if alert.severity == "Medium" %}selected{% endif %}>Medium</option>
+                    <option value="Low" {% if alert.severity == "Low" %}selected{% endif %}>Low</option>
+                </select>
+            </td>
+            <td class="title-cell">{{ alert.title }}</td>
+            <td class="description-cell">{{ alert.description|safe }}</td>
+        </tr>
+        <tr class="alert-details">
+            <td colspan="3">
+                <strong>Priority:</strong> {{ alert.severity|default:"Not Specified" }}<br>
+                <strong>Full Title:</strong> {{ alert.title }}<br>
+                <strong>Full Description:</strong> {{ alert.description|safe }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'soc/js/alert_list.js' %}"></script>
+{% endblock %}

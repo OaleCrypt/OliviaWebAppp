@@ -1,0 +1,29 @@
+body {
+    background-color: #000000;
+    color: #36dd79;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5;
+    padding: 5;
+}
+
+.terminal {
+    border: 2px solid #36dd79;
+    padding: 10px;
+    margin: 10px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.input-prompt {
+    margin-right: 10px;
+}
+
+.input-field {
+    background-color: #282c34;
+    color: #36dd79;
+    border: none;
+    outline: none;
+}

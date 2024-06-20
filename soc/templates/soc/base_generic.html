@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Incident Management{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'soc/css/style.css' %}">
+    <!-- Leaflet CSS for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <!-- Flatpickr CSS for date-time picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header>
+        <h1>Incident Management</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'incident_list_view' %}">Incident List</a></li>
+                <li><a href="{% url 'create_incident' %}">Create Incident</a></li>
+                <li><a href="{% url 'alert_list_view' %}">Alert List</a></li>
+                <li><a href="{% url 'create_alert' %}">Create Alert</a></li>
+                <li><a href="{% url 'attack_map' %}">Attack Map</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Incident Management</p>
+    </footer>
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Custom JavaScript -->
+    <script src="{% static 'soc/js/common.js' %}"></script>
+    {% block extra_js %}
+    {% endblock %}
+</body>
+</html>

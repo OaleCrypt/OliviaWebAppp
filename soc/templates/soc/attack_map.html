@@ -1,0 +1,27 @@
+{% extends "soc/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Live Attack Map</h1>
+<div id="map" style="height: 500px;"></div>
+<table class="metrics-table">
+    <thead>
+        <tr>
+            <th>Metric</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for metric in metrics %}
+        <tr>
+            <td>{{ metric.Metric }}</td>
+            <td>{{ metric.Count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'soc/js/attack_map.js' %}"></script>
+{% endblock %}

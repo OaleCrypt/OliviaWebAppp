@@ -1,0 +1,44 @@
+{% extends "soc/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Incident List</h1>
+<table class="incidents-table">
+    <thead>
+        <tr>
+            <th class="date-created-header">Date Created</th>
+            <th>Severity</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for incident in incidents %}
+        <tr class="incident-row" onclick="toggleDetails(this)">
+            <td class="date-created-cell">{{ incident.created }}</td>
+            <td class="severity-cell">
+                <select class="severity-dropdown">
+                    <option value="High" {% if incident.severity == "High" %}selected{% endif %}>High</option>
+                    <option value="Medium" {% if incident.severity == "Medium" %}selected{% endif %}>Medium</option>
+                    <option value="Low" {% if incident.severity == "Low" %}selected{% endif %}>Low</option>
+                </select>
+            </td>
+            <td class="description-cell short-description">
+                {{ incident.details|default:incident.description|safe }}
+            </td>
+        </tr>
+        <tr class="incident-details">
+            <td colspan="3">
+                <strong>Full Date Created:</strong> {{ incident.created }}<br>
+                <strong>Severity:</strong> {{ incident.severity|default:'Add' }}<br>
+                <strong>Full Description:</strong> {{ incident.details|default:incident.description|safe }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'soc/js/incident_list.js' %}"></script>
+{% endblock %}
+

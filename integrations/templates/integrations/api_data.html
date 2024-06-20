@@ -1,0 +1,35 @@
+{% extends "soc/base_generic.html" %}
+{% load static %}
+{% block content %}
+<h2>API Data Summary</h2>
+
+<div class="api-summary">
+    <div class="api-section">
+        <h3>Shodan Data</h3>
+        <p><strong>IP:</strong> {{ shodan_data.ip_str }}</p>
+        <p><strong>Organization:</strong> {{ shodan_data.org }}</p>
+        <p><strong>Country:</strong> {{ shodan_data.country_name }}</p>
+        <p><strong>Ports:</strong> {{ shodan_data.ports|join:", " }}</p>
+        <a href="{% url 'shodan_view' %}">View Details</a>
+    </div>
+
+    <div class="api-section">
+        <h3>AbuseIPDB Data</h3>
+        <p><strong>IP:</strong> {{ abuseipdb_data.data.ipAddress }}</p>
+        <p><strong>Domain:</strong> {{ abuseipdb_data.data.domain }}</p>
+        <p><strong>Total Reports:</strong> {{ abuseipdb_data.data.totalReports }}</p>
+        <a href="{% url 'abuseipdb_view' %}">View Details</a>
+    </div>
+
+    <div class="api-section">
+        <h3>GreyNoise Data</h3>
+        <p><strong>IP:</strong> {{ greynoise_data.ip }}</p>
+        <p><strong>Noise:</strong> {{ greynoise_data.noise }}</p>
+        <p><strong>Classification:</strong> {{ greynoise_data.classification }}</p>
+        <a href="{% url 'greynoise_view' %}">View Details</a>
+    </div>
+</div>
+
+{% endblock %}
+
+

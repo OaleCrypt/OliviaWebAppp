@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager Terminal</title>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Linking the CSS file for terminal styling -->
+    <link rel="stylesheet" href="{% static 'password_manager/css/terminal.css' %}">
+    <!-- CSRF token for safe POST requests -->
+    <script>
+        function getCsrfToken() {
+            return document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+        }
+    </script>
+</head>
+<body>
+    <div id="terminal">
+        <div id="output-container" class="command-output"></div>
+    </div>
+    <form id="terminal-form" onsubmit="return false;">
+        {% csrf_token %}
+        <input type="text" id="input-field" autocomplete="off" onkeypress="handleKeyPress(event)" />
+    </form>
+    <!-- Linking the JavaScript file for terminal functionality -->
+    <script src="{% static 'password_manager/js/terminal.js' %}"></script>
+</body>
+</html>
+

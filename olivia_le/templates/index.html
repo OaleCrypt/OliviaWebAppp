@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Olivia A Le Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" href="{% static 'olivia_le/img/favicon.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'olivia_le/img/apple-touch-icon.png' %}">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="{% static 'olivia_le/vendor/aos/aos.css' %}"> 
+  <link rel="stylesheet" href="{% static 'olivia_le/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'olivia_le/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'olivia_le/vendor/boxicons/css/boxicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'olivia_le/vendor/glightbox/css/glightbox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'olivia_le/vendor/swiper/swiper-bundle.min.css' %}">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="{% static 'olivia_le/css/style.css' %}">
+
+  <!-- =======================================================
+  * Olivia A Le
+  * Updated: June 11 2024 with Bootstrap v5.3.3
+  * Author: Olivia A Le
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{% static 'olivia_le/img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Olivia A Le</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Specializations</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Olivia A Le</h1>
+      <p>I'm a <span class="typed" data-typed-items="Fullstack Developer, Cybersecurity Engineer, Cloud Architect"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why Work With Me?</h2>
+          <p>Hello, I'm Olivia Le, a versatile and dedicated professional with a rich background in software development 
+          and cybersecurity. I have extensive experience across various technical fields, allowing me to 
+          tackle complex challenges and drive innovation. By working with me, you’ll benefit from my 
+          commitment to delivering high-quality, user-centered solutions and my ability to adapt quickly 
+          to meet your project's unique needs and goals.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="{% static 'olivia_le/img/profile-img.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Python &amp; Web Developer.</h3>
+            <p class="fst-italic">
+            My go-to programming language is Python due to its versatility. It enables me to develop diverse applications, 
+            from web development to data analysis and automation. Python's powerful libraries and frameworks allow me to 
+            efficiently address various challenges and create innovative solutions across multiple domains.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>2 April</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.olivia-le.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>USA</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>In Progress</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>hello@olivia-le.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+            I hold several key certifications, including <b>AZ-900: Microsoft Azure Fundamentals</b> for cloud services and <b>Certified MERN Stack Developer</b> for full-stack development with <b>MongoDB</b>, <b>Express.js</b>, <b>React</b>, and <b>Node.js</b>. As a <b>Splunk Power User</b>, I excel in data analysis and system monitoring. I am also pursuing cybersecurity certifications to enhance my system protection expertise. Lately, I’ve been drawn to the <b>Django framework</b> for its robust and scalable app development. This diverse skill set allows me to tackle projects in <b>cloud services</b>, <b>full-stack development</b>, <b>data analysis</b>, and <b>security</b>, adapting quickly to new challenges and delivering high-quality solutions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Facts</h2>
+          <p>Throughout my career, I have successfully managed and grown my own business, honing my leadership and project management skills while fostering a strong focus on customer service. I am adept at maintaining and troubleshooting complex software systems, always prioritizing user-friendly solutions to enhance client experiences. My background in customer service has developed my ability to communicate effectively and address client needs comprehensively. Additionally, I thrive as a team player, collaborating closely with colleagues to ensure seamless, reliable, and user-focused system performance.</p>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Happy Clients</strong> Customer Service</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects</strong> Deadline-Driven</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="700" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hours Of Support</strong> Availability & Reliable</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Teamwork</strong> Dynamic Collaboration</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Proficient in Python, JavaScript, HTML, CSS, and APIs with a solid foundation in C++. Skilled in full-stack development, system administration, cloud services (Azure), and cybersecurity. Experienced in using frameworks like Django and React for scalable solutions.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill">Python <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="90" aria-valuemax="90"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">C++ <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">HTML <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">API <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>With over six years in Fullstack Development and Security Engineering, I design and deliver user-centered applications using Python, JavaScript, HTML, CSS, and frameworks like Django and MERN. I’m skilled in system administration, Azure cloud services, and cybersecurity. My certifications include AZ-900, MERN Stack Developer, and Splunk Power User. I am currently pursuing additional certifications to enhance my skills and looking to progress my career in dynamic and innovative environments.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Olivia A Le</h4>
+              <p><em>Innovative and deadline-driven Fullstack Developer/Security Engineer with 6+ years of experience designing and developing user-centered apps from initial concept to final, polished deliverable. I currently reside in Southern CA, but I am open to relocation!</em></p>
+              <ul>
+                <li>Southern CA</li>
+                <li>hello@olivia-le.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Certifications</h3>
+            <div class="resume-item">
+              <h4>MERN Certified Full Stack Developer</h4>
+              <h5>2015 - 2016</h5>
+              <p><em>University Of California Irvine, Irvine</em></p>
+              <p>At the University of California Irvine, I mastered full-stack web development with the MERN stack (MongoDB, Express.js, React, Node.js). Working on real-world projects, I created dynamic web applications that met business needs, honing my skills in integrating front-end and back-end components. This hands-on experience also deepened my understanding of the development lifecycle through collaboration with peers.</p>
+            </div>
+            <div class="resume-item">
+              <h4>Bachelor of Science &amp; Computer Science</h4>
+              <h5>2023 - Estimate 2026</h5>
+              <p><em>WGU</em></p>
+              <p>Currently in progress of obtaining my bachelor's in computer science, I work on this goal on nights and weekends. I also hold several tech certifications and am working on more! I am motivated to always grow and learn!</p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Administration &amp; Engineer</h4>
+              <h5>2019 - Present</h5>
+              <p><em>Premier Car Source, Orange, CA </em></p>
+              <ul>
+                <li>Developed and maintained custom software applications to streamline business operations and improve efficiency.</li>
+                <li>Managed and optimized IT infrastructure, including network and server administration, ensuring system reliability and security.</li>
+                <li>Collaborated with cross-functional teams to drive strategic initiatives and manage project timelines, achieving company objectives effectively.</li>
+                <li>Implemented and monitored cybersecurity measures to protect sensitive company data and maintain compliance with industry standards.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Engineer &amp; Product Manager</h4>
+              <h5>2017 - 2018</h5>
+              <p><em>GTR Simulator/Abtivan, Ontario, CA</em></p>
+              <ul>
+                <li>Engineered and integrated software solutions for motion simulators, enhancing the realism and performance of simulation experiences.</li>
+                <li>Managed multiple simultaneous projects, coordinating with cross-functional teams and external partners to ensure timely and successful completion under tight deadlines.</li>
+                <li>Worked closely with external partners to align on technical requirements and integrate their technologies into our motion simulator systems.</li>
+                <li>Delivered technical presentations and proposals, showcasing software capabilities and project progress to internal stakeholders and external collaborators.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Django Portfolio</h2>
+      <p>My currently built apps for cybersecurity that displays password encryptions and demos SOC incident managements. They are backend projects initially build with python but I converted them for user interaction for this django project built from scratch. More apps will be added to my portfolio soon! Hover over the image and click on the chain icon to the link to demo them!</p>
+    </div>
+
+    <div class="row"> <!-- Add the row class here to wrap the portfolio items -->
+
+      <div class="col-lg-6 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-wrap">
+          <img src="{% static 'olivia_le/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="{% static 'olivia_le/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SOC Incident Management App demo that simulates incident management. Data collected from the Mitre enterprise json repo and fetched via api"><i class="bx bx-plus"></i></a>
+            <a href="{% url 'attack_map' %}" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="{% static 'olivia_le/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="{% static 'olivia_le/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Password Terminal App that demos password encryptions."><i class="bx bx-plus"></i></a>
+            <a href="{% url 'password_terminal' %}" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End of row -->
+
+  </div>
+</section><!-- End Portfolio Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Specializations</h2>
+          <p>As a versatile professional in software development and cybersecurity, I bring over six years of experience to deliver high-quality, user-centered solutions that drive project success. Whether you're looking to build a robust e-commerce platform, a sleek admin dashboard, or a secure application, I can tailor my skills to meet the specific organization needs. My commitment to excellence ensures that every project is approached with innovation and a focus on delivering results that align with your vision.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bi bi-browser-chrome"></i></div>
+            <h4 class="title"><a href="">Fullstack Web Devops</a></h4>
+            <p class="description">Dynamic, responsive websites and apps with MERN stack and Django, ensuring seamless user experiences</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bi bi-award"></i></div>
+            <h4 class="title"><a href="">Customer Service Development</a></h4>
+            <p class="description">I develop custom software solutions that tailors to the organizational needs, including management systems, encryption, and SIEM</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bi bi-person-check"></i></div>
+            <h4 class="title"><a href="">System Admin & Cloud Services</a></h4>
+            <p class="description">I manage and optimize IT infrastructure, specializing in system administration and Azure cloud services, ensuring the organization's systems are reliable, efficient, and secure.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bi bi-shield-check"></i></div>
+            <h4 class="title"><a href="">Cybersecurity Solutions</a></h4>
+            <p class="description">I provide comprehensive cybersecurity services, including system hardening, encryption, and monitoring with tools like Splunk, to protect your digital assets.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bi bi-cart4"></i></div>
+            <h4 class="title"><a href="">E-commerce and Data Solutions</a></h4>
+            <p class="description">I develop robust e-commerce platforms and specialize in data management and analysis, ensuring seamless shopping experiences and insightful, secure data handling.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon"><i class="bi bi-kanban"></i></div>
+            <h4 class="title"><a href="">Project Management</a></h4>
+            <p class="description">I provide end-to-end project management, ensuring timely delivery, quality standards, and effective resource management for your goals.</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>References</h2>
+          <p>Testimonials from colleagues and clients who have worked with me. These reviews highlight my professionalism, technical expertise, and collaborative approach to projects. They also reflect the high value I place on my reputation for delivering quality work and fostering positive relationships. I am committed to maintaining the trust and respect of those I work with, ensuring that each project is approached with integrity and excellence.</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Working with Olivia was a game-changer. Her technical expertise and ability to seamlessly integrate complex systems were impressive. She consistently delivers high-quality solutions and is a fantastic team player
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'olivia_le/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Alex Johnson</h3>
+                <h4>Senior Software Engineer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Olivia's proficiency in software development and system administration is unmatched. Her dedication and innovative problem-solving have greatly enhanced our project outcomes. She's a true asset to any team
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'olivia_le/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Maya Patel</h3>
+                <h4>Program Manager</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Olivia excels in full-stack development and cybersecurity. Her attention to detail and commitment to quality make her an invaluable partner. She's always proactive and collaborative in her approach.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'olivia_le/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Liam Thompson</h3>
+                <h4>Cybersecurity Analyst</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Collaborating with Olivia has been a pleasure. Her expertise in cloud services and cybersecurity, coupled with her reliable work ethic, ensured our project's success. She's a dependable and skilled professional.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'olivia_le/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sophia Nguyen</h3>
+                <h4>Cloud Solutions Architect</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Olivia’s work on our project was exceptional. She handled challenging tasks with ease, demonstrating her deep knowledge and versatility in tech. Her professionalism and dedication are truly inspiring.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'olivia_le/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>Emma Davis</h3>
+                <h4>Front-End Developer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section> 
+    <!-- End Testimonials Section -->
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Get In Touch!</h2>
+          <p>I'm available for job offers and open to freelance opportunities in software development, system administration, and cybersecurity. Let's collaborate on innovative projects! Contact me at hello@olivia-le.com. I look forward to connecting with you!</p>
+        </div>
+        <div class="row" data-aos="fade-in">
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>United States of America</p>
+              </div>
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>hello@olivia-le.com</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53086.13285548005!2d-117.88714769999999!3d33.73783359999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdb956c823085%3A0xc74f843a1f1efdbc!2sSanta%20Ana%2C%20CA!5e0!3m2!1sen!2sus!4v1718224303556!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+          </div>
+    
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <!-- Hidden anchor for scrolling -->
+            <a id="form-submission" style="display: none;"></a>
+            <form action="{% url 'home' %}#form-submission" method="POST" class="contact-form" id="contact-form">
+              {% csrf_token %}
+              <div class="here">
+                <!-- Alert message container for dynamic messages -->
+                <div class="alert d-none"></div>
+                <h2>Send me a message!</h2>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required placeholder="Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" rows="10" required placeholder="Your message"></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Olivia A Le</span></strong>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'olivia_le/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/typed.js/typed.umd.js' %}"></script>
+  <script src="{% static 'olivia_le/vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'olivia_le/js/main.js' %}"></script>
+</body>
+
+</html>

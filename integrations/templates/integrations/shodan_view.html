@@ -1,0 +1,27 @@
+{% extends "soc/base_generic.html" %}
+{% load static %}
+{% block content %}
+<h2>Shodan Data for IP: {{ data.ip_str }}</h2>
+{% if data.error %}
+    <p>Error: {{ data.error }}</p>
+{% else %}
+    <p><strong>Organization:</strong> {{ data.org }}</p>
+    <p><strong>ISP:</strong> {{ data.isp }}</p>
+    <p><strong>Country:</strong> {{ data.country_name }}</p>
+    <p><strong>Last Update:</strong> {{ data.last_update }}</p>
+    <p><strong>Hostnames:</strong> {{ data.hostnames|join:", " }}</p>
+    <p><strong>Ports:</strong> {{ data.ports|join:", " }}</p>
+    <h3>Services:</h3>
+    <ul>
+        {% for service in data.data %}
+            <li>
+                <strong>Port:</strong> {{ service.port }} <br>
+                <strong>Service:</strong> {{ service.product }} <br>
+                <strong>Banner:</strong> <pre>{{ service.banner }}</pre>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
+
+
