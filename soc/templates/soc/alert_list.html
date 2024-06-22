@@ -1,5 +1,6 @@
 {% extends "soc/base_generic.html" %}
 {% load static %}
+{% load compress %}
 
 {% block content %}
 <h1>Alert List</h1>
@@ -37,5 +38,8 @@
 {% endblock %}
 
 {% block extra_js %}
+{% compress js %}
+<!-- Compressing JS files for the alert list page -->
 <script src="{% static 'soc/js/alert_list.js' %}"></script>
+{% endcompress %}
 {% endblock %}

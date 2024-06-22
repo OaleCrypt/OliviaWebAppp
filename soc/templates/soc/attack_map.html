@@ -1,5 +1,6 @@
 {% extends "soc/base_generic.html" %}
 {% load static %}
+{% load compress %}
 
 {% block content %}
 <h1>Live Attack Map</h1>
@@ -23,5 +24,8 @@
 {% endblock %}
 
 {% block extra_js %}
+{% compress js %}
+<!-- Compressing JS files for the attack map page -->
 <script src="{% static 'soc/js/attack_map.js' %}"></script>
+{% endcompress %}
 {% endblock %}

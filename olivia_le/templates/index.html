@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,16 +19,15 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  {% compress css %}
   <link rel="stylesheet" href="{% static 'olivia_le/vendor/aos/aos.css' %}"> 
   <link rel="stylesheet" href="{% static 'olivia_le/vendor/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'olivia_le/vendor/bootstrap-icons/bootstrap-icons.css' %}">
   <link rel="stylesheet" href="{% static 'olivia_le/vendor/boxicons/css/boxicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'olivia_le/vendor/glightbox/css/glightbox.min.css' %}">
   <link rel="stylesheet" href="{% static 'olivia_le/vendor/swiper/swiper-bundle.min.css' %}">
-
-  <!-- Template Main CSS File -->
   <link rel="stylesheet" href="{% static 'olivia_le/css/style.css' %}">
-
+  {% endcompress %}
   <!-- =======================================================
   * Olivia A Le
   * Updated: June 11 2024 with Bootstrap v5.3.3
@@ -48,11 +48,15 @@
         <img src="{% static 'olivia_le/img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Olivia A Le</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          {% comment %} <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> {% endcomment %}
+          {% comment %} <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> {% endcomment %}
+          {% comment %} <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> {% endcomment %}
+          <a href="https://github.com/OaleCrypt" class="github"><i class="bi bi-github"></i></a>
+          {% comment %} <a href="linkedin.com/in/olivia-le-5814621b5" class="linkedin"><i class="bx bxl-linkedin"></i></a> {% endcomment %}
+          <a href="https://www.linkedin.com/in/olivia-le-5814621b5" class="linkedin" target="_blank">
+            <i class="bx bxl-linkedin"></i>
+        </a>
+        
         </div>
       </div>
 
@@ -546,6 +550,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  {% compress js %}
   <script src="{% static 'olivia_le/vendor/purecounter/purecounter_vanilla.js' %}"></script>
   <script src="{% static 'olivia_le/vendor/aos/aos.js' %}"></script>
   <script src="{% static 'olivia_le/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -557,6 +562,7 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'olivia_le/js/main.js' %}"></script>
+  {% endcompress %}
 </body>
 
 </html>

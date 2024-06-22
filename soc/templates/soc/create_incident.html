@@ -1,6 +1,6 @@
 {% extends "soc/base_generic.html" %}
 {% load static %}
-
+{% load compress %}
 {% block content %}
   <h1>Create New Incident</h1>
   <form method="post" novalidate>
@@ -25,8 +25,9 @@
     <button type="submit" class="btn btn-primary">Create Incident</button>
   </form>
 {% endblock %}
-
 {% block extra_js %}
+{% compress js %}
 <script src="{% static 'soc/js/incident_form.js' %}"></script>
 <script src="{% static 'soc/js/common.js' %}"></script>
+{% endcompress %}
 {% endblock %}

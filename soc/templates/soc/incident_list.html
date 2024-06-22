@@ -1,6 +1,6 @@
 {% extends "soc/base_generic.html" %}
 {% load static %}
-
+{% load compress %}
 {% block content %}
 <h1>Incident List</h1>
 <table class="incidents-table">
@@ -37,8 +37,8 @@
     </tbody>
 </table>
 {% endblock %}
-
 {% block extra_js %}
+{% compress js %}
 <script src="{% static 'soc/js/incident_list.js' %}"></script>
+{% endcompress %}
 {% endblock %}
-

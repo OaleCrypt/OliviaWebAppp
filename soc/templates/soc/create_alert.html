@@ -1,5 +1,6 @@
 {% extends "soc/base_generic.html" %}
 {% load static %}
+{% load compress %}
 
 {% block content %}
   <h1>Create New Alert</h1>
@@ -44,5 +45,7 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'soc/js/alert_form.js' %}"></script>
+  {% compress js %}
+  <script src="{% static 'soc/js/alert_form.js' %}"></script>
+  {% endcompress %}
 {% endblock %}

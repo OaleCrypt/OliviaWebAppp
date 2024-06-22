@@ -1,14 +1,19 @@
 {% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Incident Management{% endblock %}</title>
+    
+    <!-- Compressing and loading local CSS files -->
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'soc/css/style.css' %}">
-    <!-- Leaflet CSS for map -->
+    {% endcompress %}
+
+    <!-- External CSS (not compressed) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-    <!-- Flatpickr CSS for date-time picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
@@ -25,18 +30,25 @@
             </ul>
         </nav>
     </header>
+    
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    
     <footer>
         <p>&copy; 2024 Incident Management</p>
     </footer>
-    <!-- JavaScript Libraries -->
+
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <!-- Custom JavaScript -->
+
+    <!-- Compressing and loading local JavaScript files -->
+    {% compress js %}
     <script src="{% static 'soc/js/common.js' %}"></script>
+    {% endcompress %}
+
+    <!-- Placeholder for additional JavaScript from child templates -->
     {% block extra_js %}
     {% endblock %}
 </body>
