@@ -12,6 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
+
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 
 # Application definition
@@ -25,7 +26,6 @@ INSTALLED_APPS = [
     'olivia_le',
     'password_manager',
     'soc',
-    'integrations',
     'compressor',
 ]
 
@@ -35,7 +35,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'olivia_le/static'),
     os.path.join(BASE_DIR, 'password_manager/static'),
     os.path.join(BASE_DIR, 'soc/static'),
-    os.path.join(BASE_DIR, 'integrations/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -133,38 +132,14 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
+        'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT', default='5432'),
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
-# API keys
-GREYNOISE_API_KEY = config('GREYNOISE_API_KEY')
-SHODAN_API_KEY = config('SHODAN_API_KEY')
-ABUSEIPDB_API_KEY = config('ABUSEIPDB_API_KEY')
-
-# Celery configuration for periodic tasks
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
-
-CELERY_BEAT_SCHEDULE = {
-    'fetch-shodan-data-every-day': {
-        'task': 'integrations.tasks.fetch_shodan_data',
-        'schedule': 86400.0,  # 24 hours
-    },
-    'fetch-abuseipdb-data-every-day': {
-        'task': 'integrations.tasks.fetch_abuseipdb_data',
-        'schedule': 86400.0,  # 24 hours
-    },
-    'fetch-greynoise-data-every-day': {
-        'task': 'integrations.tasks.fetch_greynoise_data',
-        'schedule': 86400.0,  # 24 hours
-    },
-}
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

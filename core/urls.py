@@ -7,7 +7,6 @@ urlpatterns = [
     path('', include('olivia_le.urls')),
     path('password-manager/', include('password_manager.urls')),
     path('soc/', include('soc.urls')),
-    path('integrations/', include('integrations.urls')),
 ]
 
 from django.conf import settings
