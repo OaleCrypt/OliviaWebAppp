@@ -105,7 +105,7 @@ Copy code below
 python manage.py collectstatic
 Set Up a Production Database:
 
-Ensure your PostgreSQL database is configured for production use.
+Ensure your database is configured for production use.
 Update the .env file with the production database credentials.
 Deploy Using Your Preferred Platform:
 
