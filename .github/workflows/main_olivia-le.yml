@@ -33,19 +33,24 @@ jobs:
         mkdir -p password_manager
         python -c "from cryptography.fernet import Fernet; key = Fernet.generate_key(); with open('password_manager/key.key', 'wb') as key_file: key_file.write(key)"
 
-    - name: Collect static files
-      run: |
-        python manage.py collectstatic --noinput
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
+<<<<<<< HEAD
     - name: Migrate database
       env:
         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
       run: |
         python manage.py migrate
 
+=======
+>>>>>>> d3293bf70fd70e96334afe4ef9f35b3f4ea12a4c
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'olivia-le-webapp'
+        app-name: 'olivia-le'
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+
