@@ -1,6 +1,3 @@
-# This workflow builds and deploys a Python app to Azure Web App (olivia-le).
-
-# Documentation references
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
@@ -18,15 +15,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python version
         uses: actions/setup-python@v1
         with:
           python-version: '3.10'
 
-      - name: Create and activate virtual environment
+      - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -39,7 +35,7 @@ jobs:
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
 
-      - name: Upload artifact for deployment
+      - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
         with:
           name: python-app
@@ -54,7 +50,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write # This is required for requesting the JWT
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -65,18 +61,18 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
+      
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_66B015A1F6A347BB90AFC090D444626C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A40DFDBD16B0454DAE411A4A8FC24234 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7A608891A1184040AF0C98CF6C7C7932 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3F9FC3A9A6224D6BAAF80002F83BAA3E }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2F6354C39DE34167AD8A72260FE7DB29 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_863804ADF3E5464F8B91257C6FD44C8B }}
 
-      - name: Deploy to Azure Web App
+      - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'olivia-le'
           slot-name: 'Production'
-
           
