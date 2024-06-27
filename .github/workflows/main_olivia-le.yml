@@ -26,9 +26,15 @@ jobs:
     - name: 'Generate key.key file if not exists'
       run: |
         mkdir -p password_manager
-        if [ ! -f password_manager/key.key ]; then
-          python -c "from cryptography.fernet import Fernet; key = Fernet.generate_key(); with open('password_manager/key.key', 'wb') as key_file: key_file.write(key)"
-        fi
+        python -c "
+import os
+from cryptography.fernet import Fernet
+key_path = 'password_manager/key.key'
+if not os.path.exists(key_path):
+    key = Fernet.generate_key()
+    with open(key_path, 'wb') as key_file:
+        key_file.write(key)
+        "
 
     - name: 'Run Tests'
       run: |
@@ -51,3 +57,4 @@ jobs:
         app-name: 'olivia-le'
         slot-name: 'production'
         package: ${{ github.workspace }}
+
