@@ -13,6 +13,7 @@ def load_key():
 def write_key():
     key = Fernet.generate_key()
     key_path = os.path.join(settings.BASE_DIR, 'password_manager', 'key.key')
+    os.makedirs(os.path.dirname(key_path), exist_ok=True)
     with open(key_path, "wb") as key_file:
         key_file.write(key)
 
@@ -26,8 +27,8 @@ def view_passwords(username):
         with open(file_path, 'r') as f:
             for line in f.readlines():
                 user, encrypted_pass = line.strip().split("|")
-                if user == username:
-                    passwords.append((user, encrypted_pass))
+                if user == username:  # Only return passwords for the specified username
+                    passwords.append((user, encrypted_pass))  # Do not decrypt
     return passwords
 
 def add_password(account_name, password):
