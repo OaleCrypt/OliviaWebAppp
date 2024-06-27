@@ -16,4 +16,3 @@ class Password(models.Model):
         return f"{self.service} - {self.username}"
 
 
-

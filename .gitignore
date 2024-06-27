@@ -20,7 +20,6 @@ env/
 .DS_Store
 error.log
 
-
 # VS Code
 .vscode/
 
@@ -45,8 +44,5 @@ coverage.xml
 # macOS files
 .DS_Store
 
-# Ignore key.key file
-password_manager/key.key
-
-# Ignore key.key file in the soc directory
-soc/key.key.env
+# Ensure specific file is not ignored
+!password_manager/key.key
