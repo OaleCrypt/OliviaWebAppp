@@ -31,7 +31,16 @@ jobs:
     - name: Generate key for password manager
       run: |
         mkdir -p password_manager
-        python -c "from cryptography.fernet import Fernet; import os; key_path = 'password_manager/key.key'; if not os.path.exists(key_path): key = Fernet.generate_key(); with open(key_path, 'wb') as key_file: key_file.write(key)"
+        python -c "from cryptography.fernet import Fernet; import os; key_path = 'password_manager/key.key'; if not os.path.exists(key_path): key = Fernet.generate_key(); with open(key_path, 'wb') as key_file: key_file.write(key); print(f'Key generated and saved to {key_path}')"
+    
+    - name: Check key generation
+      run: |
+        if [ -f password_manager/key.key ]; then
+          echo "Key file exists.";
+        else
+          echo "Key file does not exist.";
+          exit 1;
+        fi
 
     - name: Collect static files
       run: |
