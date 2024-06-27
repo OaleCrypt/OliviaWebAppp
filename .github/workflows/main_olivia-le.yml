@@ -40,7 +40,6 @@ jobs:
     - name: Migrate database
       env:
         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
       run: |
         python manage.py migrate
 

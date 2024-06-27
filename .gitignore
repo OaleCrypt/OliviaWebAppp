@@ -44,5 +44,5 @@ coverage.xml
 # macOS files
 .DS_Store
 
-# Ensure specific file is not ignored
-!password_manager/key.key
+# Password manager key file
+password_manager/key.key
