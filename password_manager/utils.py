@@ -5,7 +5,7 @@ from django.conf import settings
 def load_key():
     key_path = os.path.join(settings.BASE_DIR, 'password_manager', 'key.key')
     if not os.path.exists(key_path):
-        write_key()  # Create the key file if it does not exist
+        write_key()
     with open(key_path, "rb") as key_file:
         key = key_file.read()
     return key
@@ -26,8 +26,8 @@ def view_passwords(username):
         with open(file_path, 'r') as f:
             for line in f.readlines():
                 user, encrypted_pass = line.strip().split("|")
-                if user == username:
-                    passwords.append((user, encrypted_pass))
+                if user == username:  # Only return passwords for the specified username
+                    passwords.append((user, encrypted_pass))  # Do not decrypt
     return passwords
 
 def add_password(account_name, password):
