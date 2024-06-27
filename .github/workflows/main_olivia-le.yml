@@ -34,7 +34,7 @@ if not os.path.exists(key_path):
     key = Fernet.generate_key()
     with open(key_path, 'wb') as key_file:
         key_file.write(key)
-        "
+"
 
     - name: 'Run Tests'
       run: |
@@ -57,4 +57,3 @@ if not os.path.exists(key_path):
         app-name: 'olivia-le'
         slot-name: 'production'
         package: ${{ github.workspace }}
-
