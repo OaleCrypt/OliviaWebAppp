@@ -31,7 +31,7 @@ jobs:
     - name: Generate key for password manager
       run: |
         mkdir -p password_manager
-        python -c "from cryptography.fernet import Fernet; key = Fernet.generate_key(); open('password_manager/key.key', 'wb').write(key)"
+        python -c "from cryptography.fernet import Fernet; key = Fernet.generate_key(); with open('password_manager/key.key', 'wb') as key_file: key_file.write(key)"
 
     - name: Azure Login
       uses: azure/login@v1
@@ -41,11 +41,7 @@ jobs:
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'your-app-name'
+        app-name: 'olivia-le'
         slot-name: 'production'
-        package: .
-      env:
-        pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
-        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
-
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
