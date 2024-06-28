@@ -1,4 +1,4 @@
-name: Django CI/CD
+name: Deploy to Azure
 
 on:
   push:
@@ -10,44 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.10'
-    
+
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
+        python -m venv antenv
+        source antenv/bin/activate
+        pip install --upgrade pip
         pip install -r requirements.txt
-    
-    - name: Generate key for password manager
+
+    - name: Run migrations
+      env:
+        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
       run: |
-        mkdir -p password_manager
-        python -c "from cryptography.fernet import Fernet; import os; key_path = 'password_manager/key.key'; if not os.path.exists(key_path): key = Fernet.generate_key(); with open(key_path, 'wb') as key_file: key_file.write(key); print(f'Key generated and saved to {key_path}')"
-    
-    - name: Check key generation
-      run: |
-        if [ -f password_manager/key.key ]; then
-          echo "Key file exists.";
-        else
-          echo "Key file does not exist.";
-          exit 1;
-        fi
+        source antenv/bin/activate
+        python manage.py migrate
 
     - name: Collect static files
       run: |
+        source antenv/bin/activate
         python manage.py collectstatic --noinput
-    
-    - name: Migrate database
-      env:
-        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      run: |
-        python manage.py migrate
 
-    - name: Deploy to Azure
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'olivia-le'
