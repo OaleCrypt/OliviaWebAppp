@@ -33,6 +33,8 @@ jobs:
         python manage.py migrate
 
     - name: Collect static files
+      env:
+        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
       run: |
         source antenv/bin/activate
         python manage.py collectstatic --noinput
