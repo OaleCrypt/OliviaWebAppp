@@ -25,6 +25,24 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Generate key if not exists
+      run: |
+        source antenv/bin/activate
+        echo "import os
+from cryptography.fernet import Fernet
+
+key_path = 'password_manager/key.key'
+
+def generate_key():
+    key = Fernet.generate_key()
+    with open(key_path, 'wb') as key_file:
+        key_file.write(key)
+
+if not os.path.exists(key_path):
+    generate_key()
+" > generate_key.py
+        python generate_key.py
+
     - name: Run migrations
       env:
         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
@@ -33,12 +51,9 @@ jobs:
         python manage.py migrate
 
     - name: Collect static files
-      env:
-        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
       run: |
         source antenv/bin/activate
         python manage.py collectstatic --noinput
-        python manage.py compress
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
