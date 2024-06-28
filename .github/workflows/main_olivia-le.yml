@@ -36,6 +36,7 @@ jobs:
       run: |
         source antenv/bin/activate
         python manage.py collectstatic --noinput
+        python manage.py compress
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
