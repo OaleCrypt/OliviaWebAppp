@@ -1,7 +1,6 @@
 from django.db import models
 from .utils import fer  # Ensure this import is valid
 
-# Example usage of the Fernet instance in the model (if needed)
 class Password(models.Model):
     service = models.CharField(max_length=100)
     username = models.CharField(max_length=100)

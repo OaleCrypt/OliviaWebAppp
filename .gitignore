@@ -45,4 +45,4 @@ coverage.xml
 .DS_Store
 
 # Password manager key file
-password_manager/key.key
+#password_manager/key.key
