@@ -1,3 +1,5 @@
+# core/settings.py
+
 import os
 from pathlib import Path
 from decouple import config, Csv
@@ -13,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='olivia-le.azurewebsites.net', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='olivia-le-webapp.azurewebsites.net', cast=Csv())
 
 # Application definition
 INSTALLED_APPS = [
