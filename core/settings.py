@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='olivia-le-webapp.azurewebsites.net', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='olivia-le.azurewebsites.net', cast=Csv())
 
 # Application definition
 INSTALLED_APPS = [
@@ -172,3 +172,6 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
 
 # Static files storage with WhiteNoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Path to the key file
+KEY_FILE_PATH = os.path.join(BASE_DIR, 'password_manager', 'key.key')

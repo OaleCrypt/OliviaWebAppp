@@ -15,4 +15,3 @@ if not os.path.exists(key_path):
     generate_key()
 else:
     print("Key file already exists.")
-
