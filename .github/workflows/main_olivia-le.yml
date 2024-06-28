@@ -23,6 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Ensure key file is generated if missing
+        run: |
+          python generate_key.py
+
       - name: Run migrations
         run: |
           python manage.py migrate
@@ -30,10 +34,6 @@ jobs:
       - name: Collect static files
         run: |
           python manage.py collectstatic --noinput
-
-      - name: Ensure key file is generated if missing
-        run: |
-          python generate_key.py
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
