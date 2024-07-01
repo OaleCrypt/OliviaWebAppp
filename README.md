@@ -1,7 +1,7 @@
 README Summary for Django Portfolio Website
 
 Project Overview
-Welcome to my Django Portfolio Website! This project is a personal portfolio showcasing various projects, including a sophisticated Security Operations Center (SOC) Incident Management system, a Password Manager, and other demos. Built with the Django framework and PostgreSQL as the database backend, this website highlights my skills in web development and cybersecurity.
+Welcome to my Django Portfolio Website! This project is a personal portfolio showcasing various projects, including a sophisticated Security Operations Center (SOC) Incident Management system, a Password Manager, and other demos. Built with the Django framework as the database backend, this website highlights my skills in web development and cybersecurity.
 
 Current versions:
 (python 3.10)

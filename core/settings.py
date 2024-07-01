@@ -4,7 +4,7 @@ from decouple import config, Csv
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(os.path.join(Path(__file__).resolve().parent.parent, '.env'))
 
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -174,4 +174,4 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Path to the key file
-KEY_FILE_PATH = os.path.join(BASE_DIR, 'password_manager', 'key.key')
+KEY_VALUE = os.environ.get('KEY_VALUE')

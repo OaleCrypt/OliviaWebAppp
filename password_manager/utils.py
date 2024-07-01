@@ -3,18 +3,17 @@ import os
 from django.conf import settings
 
 def load_key():
-    key_path = os.path.join(settings.BASE_DIR, 'password_manager', 'key.key')
-    if not os.path.exists(key_path):
-        write_key()
-    with open(key_path, "rb") as key_file:
-        key = key_file.read()
-    return key
+    key = os.getenv('KEY_VALUE')
+    if not key:
+        raise ValueError("No KEY_VALUE environment variable set.")
+    return key.encode()
 
 def write_key():
     key = Fernet.generate_key()
     key_path = os.path.join(settings.BASE_DIR, 'password_manager', 'key.key')
     with open(key_path, "wb") as key_file:
         key_file.write(key)
+    return key
 
 key = load_key()
 fer = Fernet(key)
