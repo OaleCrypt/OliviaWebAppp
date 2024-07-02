@@ -36,6 +36,7 @@ jobs:
         EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
         DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
         KEY_KEY: ${{ secrets.KEY_KEY }}
+        KEY_VALUE: ${{ secrets.KEY_VALUE }}
       run: |
         python manage.py migrate
 
@@ -52,6 +53,7 @@ jobs:
         EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
         DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
         KEY_KEY: ${{ secrets.KEY_KEY }}
+        KEY_VALUE: ${{ secrets.KEY_VALUE }}
       run: |
         python manage.py collectstatic --noinput
 

@@ -125,3 +125,4 @@ COMPRESS_JS_FILTERS = [
 
 # Path to the key.key file
 KEY_KEY_PATH = config('KEY_KEY')
+KEY_VALUE = config('KEY_VALUE')
