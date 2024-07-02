@@ -122,3 +122,6 @@ COMPRESS_CSS_FILTERS = [
 COMPRESS_JS_FILTERS = [
     'compressor.filters.jsmin.JSMinFilter',
 ]
+
+# Path to the key.key file
+KEY_KEY_PATH = config('KEY_KEY')
