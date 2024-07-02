@@ -9,7 +9,6 @@ click-repl==0.3.0
 cryptography==42.0.8
 Django==5.0.6
 django-appconf==1.0.6
-django-sslserver==0.22
 django_compressor==4.5
 gunicorn==22.0.0
 idna==3.7

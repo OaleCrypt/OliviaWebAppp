@@ -1,4 +1,4 @@
-name: Olivia LE CI/CD
+name: Deploy Django App to Azure
 
 on:
   push:
@@ -18,45 +18,18 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Generate key if missing
-      run: |
-        python generate_key.py
-
     - name: Run migrations
       run: |
         python manage.py migrate
-      env:
-        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-
-    - name: Cache static files
-      id: cache-static
-      uses: actions/cache@v2
-      with:
-        path: |
-          staticfiles
-        key: ${{ runner.os }}-static-${{ hashFiles('**/requirements.txt') }}-${{ hashFiles('**/static/**/*') }}
-        restore-keys: |
-          ${{ runner.os }}-static-
 
     - name: Collect static files
-      if: steps.cache-static.outputs.cache-hit != 'true'
       run: |
         python manage.py collectstatic --noinput
-      env:
-        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
